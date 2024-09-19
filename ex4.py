@@ -1,14 +1,20 @@
-a = 5
-# if문의 마지막에 :(콜론) 반드시 사용
-# python은 블록구분에서 들여쓰기가 중요함 (들여쓰기를 해야 블록 구분이 가능함)
-if a == 5:
-    print('Right!')
-    print('a is 5')
-    
-if a == 3:
-    print('Right!')
-    print('a is 3')
+print("1~9중 원하는수를 입력하세요")
+a = int(input())
+if a > 0 and a < 10:
+    for i in range(1,10):
+        print(f"{a} X {i} = {a*i}")
+else:
+    print("1~9 사이의 수를 입력해 주세요")
 
-if a != 3:
-    print('Right!')
-    print('a is not 3')
+
+
+
+
+i = 0
+num = int(input("수를 입력해 주세요 : "))
+
+if num > 0 and num < 10:
+    for i in range(1,10):
+        print(f"{num} X {i} = {num*i}")
+else:
+    print("1~9 사이의 수를 입력해 주세요")

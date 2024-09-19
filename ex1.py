@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 #col_names = ['과목번호', '과목명', '강의실', '시간수']
 #list1 = list([['C1', '인공지능개론', 'R1', 3],
 #              ['C2', '웃음치료', 'R2', 2]
@@ -71,3 +72,11 @@ print(df.loc[df['시간수'] > 2], end='\n\n')
 #셀 찾기
 print(df.loc[df['과목명'] == '경영학']['담당교수'], end='\n\n')
 print(df.loc[df['과목명'] == '경영학']['담당교수'].values[0], end='\n\n')
+
+# df.loc[3]['담당교수'] = '이경영'
+df.loc[3,'담당교수'] = '이경영'
+print(df, end='\n\n')
+
+# df.loc[df['과목명'] == '경영학']['담당교수'] = '이경영'
+df.loc[df['과목명'] == '경영학','담당교수'] = '이경영'
+print(df, end='\n\n')
