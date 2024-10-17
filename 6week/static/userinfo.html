@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+    <style>
+        body { margin: 0 auto; position: absolute; top: 200px; left: 300px;}
+        input { color:  cyan; font-weight: bold; font-size: 30px;}
+        button {height: 50px; width: 450px; border: 2px solid blue;}
+    </style>
+</head>
+<body>
+    <form action="/user" method="post">
+        <span>학과</span>
+        <input type="text" name="major"><br/>
+        <span>이름</span>
+        <input type="text" name="name"><br/>
+        <span>학번</span>
+        <input type="text" name="studentcode"><br/>
+        <button id="btn">제출</button>
+        <p id="submit"></p>
+
+        <script>
+            var btn = document.querySelector('#btn');
+            var submit = document.querySelector('#submit')
+            var text = document.querySelectorAll('type')
+            btn.addEventListener('click',function(){
+                submit.innerHTML = text;
+            });
+        </script>
+    </form>
+</body>
+</html>
