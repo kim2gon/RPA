@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+</head>
+<style>
+    body{background: black;}
+</style>
+<body>
+    <h2 id="FU">File Upload</h2>
+    <input type="file" id="file">
+    <button onclick="uploadFile()" id="upload">Upload</button>
+
+    <script>
+        let filesss = document.querySelector('#file')
+        filesss.style.color = 'pink'
+        filesss.style.fontFamily = 'sans-serif'
+        filesss.style.fontStyle = 'italic'
+        filesss.style.fontWeight = 'bold'
+        filesss.style.fontSize = '3em'
+        filesss.style.border = '3px, solid, red'
+
+        let upload = document.querySelector('#upload')
+        upload.style.color = 'green'
+        upload.style.fontFamily = 'sans-serif'
+        upload.style.fontWeight = 'bold'
+        upload.style.fontSize = '3em'
+        upload.style.border = '3px, solid, red'
+        upload.style.float = 'right'
+
+        let FU = document.querySelector('#FU')
+        FU.style.color = 'cyan'
+        FU.style.fontWeight = 'bold'
+        FU.style.fontSize = '5em'
+        FU.style.border = '3px, solid, red'
+        
+        async function uploadFile() {
+            const fileInput = document.getElementById('file');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+
+            const response = await fetch('/uploadfile/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const data = await response.json();
+            alert(`File uploaded to: ${data.location}`);
+        }
+    </script>
+</body>
+</html>
